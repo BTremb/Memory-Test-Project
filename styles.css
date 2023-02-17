@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.description {
+    background-color: white;
+    color: #030303; 
+    text-align: left;
+    font-size: 1rem;
+    padding: 0.75rem;
+    box-shadow: 0.2rem 0.2rem 0.7rem #000000;
+    border-radius: 1rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    font-family: cursive;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aquamarine;
+}
+
+#btn1 {
+    font-size: 2rem;
+    background-color: bisque;
+    border-radius: 1rem;
+    margin: auto;
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.7rem #000000
+}
