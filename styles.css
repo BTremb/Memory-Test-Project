@@ -3,30 +3,71 @@ h1 {
     font-size: 2rem;
 }
 
-.description {
-    background-color: white;
+.container{
+    background-color: #7fffd4;
     color: #030303; 
-    text-align: left;
     font-size: 1rem;
     padding: 0.75rem;
     box-shadow: 0.2rem 0.2rem 0.7rem #000000;
     border-radius: 1rem;
     margin: auto;
-    margin-bottom: 2rem;
-    font-family: cursive;
+    font-family:cursive;
+    max-width: 60rem;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: aquamarine;
+    background-color:#bbbbbb;
 }
 
-#btn1 {
+#btnstart {
     font-size: 2rem;
-    background-color: bisque;
+    background-color: #ffe4c4;
     border-radius: 1rem;
     margin: auto;
     text-align: center;
-    padding: 0.5rem;
-    box-shadow: 0.2rem 0.2rem 0.7rem #000000
+    padding: 0.7rem;
+    box-shadow: 0.2rem 0.2rem 0.7rem #000000;
+    margin-top: 1.5rem;
+    margin-left: 0.75rem;
+    margin-bottom: 1.5rem;
 }
+
+#numDisplay {
+    font-size: 3rem;
+    padding: 3rem;
+}
+
+.timer {
+    width: 90%;
+    height: 1.25rem;
+    background-color: #ccc;
+  }
+  
+  .bar {
+    height: 100%;
+    background-color: #3498db;
+    animation: progress 10s linear forwards;
+  }
+  
+  @keyframes progress {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  
+  
+  
+  
+  
+ 
+  
