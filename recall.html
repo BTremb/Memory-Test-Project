@@ -9,8 +9,33 @@
     <body>
 
     <div class="container">
-        this is recall
-    </div>
+        
+            <p>Recall the number:</p>
+            <input type="text" id="recalledNumber">
+            <button type="submit" id='btn'>Submit</button>
 
+     </div>
+
+     <script>
+
+const btnE1 = document.getElementById('btn');
+  btnE1.addEventListener('click', onClick);
+
+  function onClick() { 
+  const recalledNumbers = document.getElementById('recalledNumber').value;
+
+  const storedNumbers = localStorage.getItem('numbers');
+  const cleanedNumbers = storedNumbers.replace(',', '');
+
+
+  if (recalledNumbers === cleanedNumbers) {
+  window.location.href = "success.html";
+       }
+   else {
+   window.location.href = "failure.html";
+       }
+}
+
+     </script>
     </body>
 </html>
