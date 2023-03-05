@@ -23,12 +23,15 @@ const btnE1 = document.getElementById('btn');
 
   function onClick() { 
   const recalledNumbers = document.getElementById('recalledNumber').value;
+  const recalledNumberAsNumber = Number(recalledNumbers);
 
-  const storedNumbers = localStorage.getItem('numbers');
-  const cleanedNumbers = storedNumbers.replace(/,/g, '');
+  const numbersString = localStorage.getItem('numbers');
+  const numbersArray = JSON.parse(numbersString);
 
+  const singleNumber = Number(numbersArray.join(''));
+  console.log(singleNumber);
 
-  if (recalledNumbers === cleanedNumbers) {
+  if (recalledNumberAsNumber === singleNumber) {
   window.location.href = "success.html";
        }
    else {
