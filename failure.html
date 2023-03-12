@@ -8,9 +8,25 @@
     </head>
 
     <body>
-    <div class="container">
+    <div class="containerFailure">
         <h1>Oh no! The number you entered was incorrect!</h1>
-        <p>You reached level ____</p>
+        <div id="levelDisplay"></div>
+        <a href="index.html"><button id ="btnNeutral">Restart test</button></a>
     </div>
+
+    <Script>
+const numbersString = localStorage.getItem('numbers');
+  const numbersArray = JSON.parse(numbersString);
+  const numbers = numbersArray.join('');
+  console.log(numbers);
+
+const numDigits = numbers.length;
+console.log(numDigits);
+const message = `You reached level ${numDigits}`;
+
+document.getElementById('levelDisplay').textContent = message;
+
+
+    </Script>
     </body>
 </html>

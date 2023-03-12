@@ -7,12 +7,48 @@
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
     <body>
-        <div class="container">
-            <h1>Good job! You recalled the number correctly!</h1>            
+        <div class="containerSucess">
+            <div id ="levelDisplay"></div>            
             <p>When you're ready, press continue below to advance to the next level!</p>
-        <a href="remember.html">
-                <button id="btnstart">Continue!</button>
-            </a>
+            <a href="remember.html">
+            <button id="btnNeutral">Continue!</button>
+            </a> 
         </div>
+        <script>
+
+const numbersString = localStorage.getItem('numbers');
+  const numbersArray = JSON.parse(numbersString);
+  const numbers = numbersArray.join('');
+  console.log(numbers);
+
+const numDigits = numbers.length;
+console.log(numDigits);
+const message = `Good job! You passed level ${numDigits}`;
+
+document.getElementById('levelDisplay').textContent = message;
+
+            btnE1 = document.getElementById('btnNeutral');
+            btnE1.addEventListener('click', onClick );
+
+            function onClick () {
+                
+                const numbersString = localStorage.getItem('numbers');
+                let numbers = JSON.parse(numbersString);
+                numbers.push(Math.floor(Math.random() * 10));
+
+                for (let i = 0; i < numbers.length; i++) {
+                    numbers.length + 1;
+                    numbers[i]=Math.floor(Math.random() * 10);
+                 }
+
+            localStorage.setItem('numbers', JSON.stringify(numbers));
+            console.log(numbers);
+            
+            }
+
+
+
+        </script>
+
     </body>
 </html>

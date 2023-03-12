@@ -28,25 +28,15 @@ bar.addEventListener('animationend', function() {
 
 window.onload=function() {
 
-const num1 = Math.floor(Math.random() * 10);
-const num2 = Math.floor(Math.random() * 10);
-
+const numbers = localStorage.getItem('numbers');
+const nums = JSON.parse(numbers);
+const numbersClean = nums.join('');
 const numDisplay = document.getElementById('numDisplay');
-numDisplay.textContent = `${num1} ${num2}`;
-
-const numbersArray = [num1, num2];
-localStorage.setItem('numbers', JSON.stringify(numbersArray));
-
-
-
-  }
-
-
-
-
+numDisplay.textContent += numbersClean;
+console.log(numbersClean);
+ }
  </script>
 </body>
 
 </html>
-
 

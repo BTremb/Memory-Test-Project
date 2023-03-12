@@ -12,26 +12,28 @@
         
             <p>Recall the number:</p>
             <input type="text" id="recalledNumber" placeholder="Enter here">
-            <button id='btn'>Submit</button>
+            <button id='btnStart'>Submit</button>
 
      </div>
 
      <script>
 
-const btnE1 = document.getElementById('btn');
+const btnE1 = document.getElementById('btnStart');
   btnE1.addEventListener('click', onClick);
 
   function onClick() { 
   const recalledNumbers = document.getElementById('recalledNumber').value;
   const recalledNumberAsNumber = Number(recalledNumbers);
+    console.log(recalledNumberAsNumber);
 
   const numbersString = localStorage.getItem('numbers');
   const numbersArray = JSON.parse(numbersString);
+  const numbers = numbersArray.join('');
+  const numberasnumber = Number(numbers);
 
-  const singleNumber = Number(numbersArray.join(''));
-  console.log(singleNumber);
+  console.log(numberasnumber);
 
-  if (recalledNumberAsNumber === singleNumber) {
+  if (recalledNumberAsNumber === numberasnumber) {
   window.location.href = "success.html";
        }
    else {
