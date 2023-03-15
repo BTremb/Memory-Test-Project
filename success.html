@@ -4,8 +4,10 @@
         <title> 
             Test your memory!
         </title>
+        <link rel="stylesheet" type="text/css" href="Reset.css"/>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
+
     <body>
         <div class="containerSucess">
             <div id ="levelDisplay"></div>            
@@ -14,18 +16,16 @@
             <button id="btnNeutral">Continue!</button>
             </a> 
         </div>
-        <script>
 
-const numbersString = localStorage.getItem('numbers');
-  const numbersArray = JSON.parse(numbersString);
-  const numbers = numbersArray.join('');
-  console.log(numbers);
 
-const numDigits = numbers.length;
-console.log(numDigits);
-const message = `Good job! You passed level ${numDigits}`;
+<script>
 
-document.getElementById('levelDisplay').textContent = message;
+    const numbersString = localStorage.getItem('numbers');
+    const numbersArray = JSON.parse(numbersString);
+    const numbers = numbersArray.join('');
+    const numDigits = numbers.length;
+    const message = `Good job! You passed level ${numDigits}`;
+    document.getElementById('levelDisplay').textContent = message;
 
             btnE1 = document.getElementById('btnNeutral');
             btnE1.addEventListener('click', onClick );
@@ -34,21 +34,14 @@ document.getElementById('levelDisplay').textContent = message;
                 
                 const numbersString = localStorage.getItem('numbers');
                 let numbers = JSON.parse(numbersString);
-                numbers.push(Math.floor(Math.random() * 10));
-
-                for (let i = 0; i < numbers.length; i++) {
-                    numbers.length + 1;
+                let length = numbers.length + 1;
+                for (let i = 0; i < length; i++) {
                     numbers[i]=Math.floor(Math.random() * 10);
                  }
 
             localStorage.setItem('numbers', JSON.stringify(numbers));
             console.log(numbers);
-            
             }
-
-
-
-        </script>
-
-    </body>
+</script>
+</body>
 </html>

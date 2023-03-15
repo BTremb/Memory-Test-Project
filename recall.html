@@ -4,43 +4,39 @@
         <title> 
             Test your memory!
         </title>
+        <link rel="stylesheet" type="text/css" href="Reset.css"/>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
-    <body>
+
+<body>
 
     <div class="container">
-        
-            <p>Recall the number:</p>
-            <input type="text" id="recalledNumber" placeholder="Enter here">
-            <button id='btnStart'>Submit</button>
+        <h1>Recall the number:</h1>
+        <input type="text" id="recalledNumber" placeholder="Enter here">
+        <button id='btnStart'>Submit</button>
+    </div>
 
-     </div>
+<script>
 
-     <script>
+    const btnE1 = document.getElementById('btnStart');
+    btnE1.addEventListener('click', onClick);
 
-const btnE1 = document.getElementById('btnStart');
-  btnE1.addEventListener('click', onClick);
+    function onClick() { 
+    const recalledNumbers = document.getElementById('recalledNumber').value;
+    const recalledNumberAsNumber = Number(recalledNumbers);
 
-  function onClick() { 
-  const recalledNumbers = document.getElementById('recalledNumber').value;
-  const recalledNumberAsNumber = Number(recalledNumbers);
-    console.log(recalledNumberAsNumber);
+    const numbersString = localStorage.getItem('numbers');
+    const numbersArray = JSON.parse(numbersString);
+    const numbers = numbersArray.join('');
+    const numberasnumber = Number(numbers);
 
-  const numbersString = localStorage.getItem('numbers');
-  const numbersArray = JSON.parse(numbersString);
-  const numbers = numbersArray.join('');
-  const numberasnumber = Number(numbers);
-
-  console.log(numberasnumber);
-
-  if (recalledNumberAsNumber === numberasnumber) {
-  window.location.href = "success.html";
+    if (recalledNumberAsNumber === numberasnumber) {
+    window.location.href = "success.html";
        }
-   else {
-   window.location.href = "failure.html";
+    else {
+    window.location.href = "failure.html";
        }
-}
-
-     </script>
-    </body>
+    }
+</script>
+</body>
 </html>

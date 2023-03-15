@@ -4,29 +4,25 @@
         <title> 
             Test your memory!
         </title>
+        <link rel="stylesheet" type="text/css" href="Reset.css"/>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
 
     <body>
     <div class="containerFailure">
         <h1>Oh no! The number you entered was incorrect!</h1>
-        <div id="levelDisplay"></div>
+        <div id="levelDisplay2"></div>
         <a href="index.html"><button id ="btnNeutral">Restart test</button></a>
     </div>
 
-    <Script>
-const numbersString = localStorage.getItem('numbers');
-  const numbersArray = JSON.parse(numbersString);
-  const numbers = numbersArray.join('');
-  console.log(numbers);
+<Script>
 
-const numDigits = numbers.length;
-console.log(numDigits);
-const message = `You reached level ${numDigits}`;
-
-document.getElementById('levelDisplay').textContent = message;
-
-
-    </Script>
-    </body>
+    const numbersString = localStorage.getItem('numbers');
+    const numbersArray = JSON.parse(numbersString);
+    const numbers = numbersArray.join('');
+    const numDigits = numbers.length - 1;   
+    const message = `You reached level ${numDigits}`;
+    document.getElementById('levelDisplay2').textContent = message;
+</Script>
+</body>
 </html>

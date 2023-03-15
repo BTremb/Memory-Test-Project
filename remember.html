@@ -4,39 +4,35 @@
         <title> 
             Test your memory!
         </title>
+        <link rel="stylesheet" type="text/css" href="Reset.css"/>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
 
 <body>
 
-<div class="container">
-    <h1>Remember this number!</h1>
-    
-    <div id="numDisplay"></div>
-
-    <div class="timer">
+    <div class="container">
+        <h1>Remember this number!</h1>
+        <div id="numDisplay"></div>
+        <div class="timer">
         <div class="bar"></div>
     </div>
-</div>
 
  <script>
 
-const bar = document.querySelector('.bar');
-bar.addEventListener('animationend', function() {
-  window.location.href = 'recall.html';
-})
+    const bar = document.querySelector('.bar');
+    bar.addEventListener('animationend', function() {
+     window.location.href = 'recall.html';
+    })
 
-window.onload=function() {
+    window.onload=function() {
 
-const numbers = localStorage.getItem('numbers');
-const nums = JSON.parse(numbers);
-const numbersClean = nums.join('');
-const numDisplay = document.getElementById('numDisplay');
-numDisplay.textContent += numbersClean;
-console.log(numbersClean);
- }
- </script>
+    const numbers = localStorage.getItem('numbers');
+    const nums = JSON.parse(numbers);
+    const numbersClean = nums.join('');
+    const numDisplay = document.getElementById('numDisplay');
+    numDisplay.textContent += numbersClean;
+    }
+</script>
 </body>
-
 </html>
 

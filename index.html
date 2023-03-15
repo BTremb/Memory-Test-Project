@@ -4,38 +4,30 @@
         <title>
             Test your memory!
          </title>
+        <link rel="stylesheet" type="text/css" href="Reset.css"/>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
 
     <body>
      <div class="container">
-        <h1>Memory Test</h1>
-        
-            <p>
-                Lets test your memory!
-                <ul>
-                    <li>The average person can store a 7 digit number in their short term memory</li>
-                    <li>The test will start by providing you a 1 digit number, and add 1 digit every time you recall the number correctly</li>
-                    <li>You will have 10 seconds to remember each number</li>
-                </ul>
-                </p>
+        <h1>Lets test your memory!</h1>
+        <ul>
+            <li>The average person can store a 7 digit number in their short term memory</li>
+            <li>The test will start by providing you a 1 digit number, and add 1 digit every time you recall the number correctly</li>
+            <li>You will have 10 seconds to remember each number</li>
+        </ul>
     
-
-            <a href="remember.html">
-                <button id="btnStart">Start test!</button>
-            </a>
+         <a href="remember.html">
+            <button id="btnStart">Start test!</button>
+         </a>
     </div>
-    <script>
-    
-        // Generate a random number between 0 and 9
-const randomNumber = Math.floor(Math.random() * 10);
 
-// Store the number in an array and store the array in localStorage
-const numbers = [randomNumber];
-localStorage.setItem('numbers', JSON.stringify(numbers));
+<script>
 
+    const randomNumber = Math.floor(Math.random() * 10);
+    const numbers = [randomNumber];
+    localStorage.setItem('numbers', JSON.stringify(numbers));
 
-    </script>
-    </body>
-
+</script>
+</body>
 </html>
