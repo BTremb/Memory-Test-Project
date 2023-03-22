@@ -1,28 +1,77 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> 
-            Test your memory!
-        </title>
+        <title>Test your memory!</title>
         <link rel="stylesheet" type="text/css" href="Reset.css"/>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
 
     <body>
-    <div class="containerFailure">
-        <h1>Oh no! The number you entered was incorrect!</h1>
-        <div id="levelDisplay2"></div>
-        <a href="index.html"><button id ="btnNeutral">Restart test</button></a>
-    </div>
+        <div class="containerFailure">
+            <h1>Oh no! The number you entered was incorrect!</h1>
+            <div id="levelDisplay2"></div>
+            <a href="index.html"><button id ="btnNeutral">Restart test</button></a>
+        </div>
 
-<Script>
+        <div class="containerLeaderboard">
+            <h1>Leaderboard</h1>
+            <label for="nameInput">Enter your name if you would like to save your score to the leaderboard (if applicable):</label>
+            <input type="text" id="nameInput" name="nameInput">
+            <button id ="saveScoreButton">Save score</button>
+            <div id="leaderboard"></div>
+        </div>
 
-    const numbersString = localStorage.getItem('numbers');
-    const numbersArray = JSON.parse(numbersString);
-    const numbers = numbersArray.join('');
-    const numDigits = numbers.length - 1;   
-    const message = `You reached level ${numDigits}`;
-    document.getElementById('levelDisplay2').textContent = message;
-</Script>
-</body>
+        <script>
+            const numbersString = localStorage.getItem('numbers');
+            const numbersArray = JSON.parse(numbersString);
+            const numbers = numbersArray.join('');
+            const numDigits = numbers.length - 1;
+            const message = `You reached level ${numDigits}`;
+            document.getElementById('levelDisplay2').textContent = message;
+
+            const date = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            });
+
+            const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+
+            const nameInput = document.getElementById('nameInput');
+            nameInput.value = localStorage.getItem('playerName') || '';
+
+            const saveScoreButton = document.getElementById('saveScoreButton');
+            saveScoreButton.addEventListener('click', function() {
+                const playerName = nameInput.value;
+                const currentPlayerScore = { name: playerName, date: date, score: numDigits };
+                leaderboard.push(currentPlayerScore);
+                leaderboard.sort((a, b) => b.score - a.score);
+                leaderboard.splice(5);
+                localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+                localStorage.setItem('playerName', playerName);
+                const table = document.createElement('table');
+                const headerRow = table.insertRow();
+                headerRow.insertCell().textContent = 'Rank';
+                headerRow.insertCell().textContent = 'Name';
+                headerRow.insertCell().textContent = 'Date';
+                headerRow.insertCell().textContent = 'Level';
+                leaderboard.forEach((entry, index) => {
+                    const row = table.insertRow();
+                    row.insertCell().textContent = index + 1;
+                    row.insertCell().textContent = entry.name;
+                    row.insertCell().textContent = entry.date;
+                    row.insertCell().textContent = entry.score;
+                });
+                const leaderboardDiv = document.getElementById('leaderboard');
+                leaderboardDiv.innerHTML = '';
+                leaderboardDiv.appendChild(table);
+
+                nameInput.style.display = 'none';
+                saveScoreButton.style.display = 'none';
+            });
+        </script>
+    </body>
 </html>
