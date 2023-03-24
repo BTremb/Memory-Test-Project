@@ -1,4 +1,6 @@
 table {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   background-color: #E4E4E1;
   border-collapse: collapse;
@@ -7,7 +9,7 @@ table {
 th,
 td {
   padding: 1rem;
-  text-align: left;
+  text-align: center;
   border: 0.1rem solid #000000;
 }
 
@@ -37,13 +39,16 @@ td {
   flex-direction: column;
   align-items: center;
   margin-top: 4rem;
-
 }
 
 h1 {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+}
+
+h2 {
+  margin-top: 0.7rem;
 }
 
 .containerFailure{
@@ -167,5 +172,9 @@ body {
   margin-top: 0.5rem;
 }
   
+#picture {
+  margin-top: 4rem;
+  margin-left: 8rem;
+}
  
   
