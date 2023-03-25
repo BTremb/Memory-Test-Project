@@ -10,13 +10,48 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
+    <div class="container-column1">
         <h1>Recall the number:</h1>
         <input type="text" id="recalledNumber" placeholder="Enter here">
         <button id='btnStart'>Submit</button>
     </div>
 
+    <div class="container-column2">
+        <div id="picture"></div>
+    </div>
+</div>
+
 <script>
+
+let images = [
+        "images/normalsteve1.png",
+        "images/normalsteve2.png",
+        "images/normalsteve3.png",
+        "images/normalsteve4.png",
+        "images/normalsteve5.png",
+        "images/normalsteve6.png",
+        "images/normalsteve7.png",
+        "images/normalsteve8.png",
+        "images/normalsteve9.png",
+        "images/normalsteve10.png",
+        "images/normalsteve11.png",
+        "images/normalsteve12.png",
+        "images/normalsteve13.png",
+        "images/normalsteve14.png",
+        "images/normalsteve15.png",
+        "images/normalsteve16.png",
+        "images/normalsteve17.png",
+      ];
+
+      let randomIndex = Math.floor(Math.random() * images.length);
+
+      let img = document.createElement("img");
+        img.src = images[randomIndex];
+
+        // Append the image element to the picture div
+        document.getElementById("picture").appendChild(img);
+
 
     const btnE1 = document.getElementById('btnStart');
     btnE1.addEventListener('click', onClick);

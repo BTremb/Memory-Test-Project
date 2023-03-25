@@ -9,7 +9,8 @@
     </head>
 
     <body>
-     <div class="container">
+     <div class="container">   
+     <div class="container-column1">
         <h1>Lets test your memory!</h1>
         <ul>
             <li>The average person can store a 7 digit number in their short term memory</li>
@@ -22,16 +23,19 @@
          </a>
     </div>
 
-    <div id="picture">
-        <img src="images/indexlego.png" width="350" height="425" alt="Lego steve"/>
+    <div class="container-column2">
+        <img src="images/indexlego.png" width="500" height="600" alt="Lego steve"/>
     </div>
+    <div>
 
 <script>
 
+    
     const randomNumber = Math.floor(Math.random() * 10);
     const numbers = [randomNumber];
     localStorage.setItem('numbers', JSON.stringify(numbers));
 
 </script>
 </body>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
 </html>
