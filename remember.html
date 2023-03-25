@@ -9,16 +9,33 @@
     </head>
 
 <body>
+    <div class="container">
+        <div class="container-column1">
+            <h1>Remember this number!</h1>
+            <div id="numDisplay"></div>
+            <div class="timer">
+            <div class="bar"></div></div>
+        </div>
 
-    <div class="container-column1">
-        <h1>Remember this number!</h1>
-        <div id="numDisplay"></div>
-        <div class="timer">
-        <div class="bar"></div>
+        <div class="container-column2">
+            <div id="picture"></div>
+        </div>
     </div>
 
  <script>
 
+    let images = [
+        "images/splitsSteve.png",
+        "images/Push-upSteve.png",
+ ]
+
+    let randomIndex = Math.floor(Math.random() * images.length);
+
+    let img = document.createElement("img");
+    img.src = images[randomIndex];
+
+    document.getElementById("picture").appendChild(img);
+    
     const bar = document.querySelector('.bar');
     bar.addEventListener('animationend', function() {
      window.location.href = 'recall.html';

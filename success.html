@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        <div class="container">
         <div class="containerSucess">
             <div id ="levelDisplay"></div>            
             <p>When you're ready, press continue below to advance to the next level!</p>
@@ -17,8 +18,32 @@
             </a> 
         </div>
 
+        <div class="container-column2">
+            <div id="picture"></div>
+        </div>
+        </div>
+
 
 <script>
+
+let images = [
+        "images/successSteve1.png",
+        "images/successSteve2.png",
+        "images/successSteve3.png",
+        "images/successSteve4.png",
+        "images/successSteve5.png",
+        "images/successSteve6.png",
+        "images/successSteve7.png",
+        "images/successSteve8.png",
+        "images/successSteve9.png",
+        "images/successSteve10.png",
+ ]
+
+    let randomIndex = Math.floor(Math.random() * images.length);
+
+    let img = document.createElement("img");
+    img.src = images[randomIndex];
+    document.getElementById("picture").appendChild(img);
 
     const numbersString = localStorage.getItem('numbers');
     const numbersArray = JSON.parse(numbersString);
