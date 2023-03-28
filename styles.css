@@ -141,7 +141,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-
 #numDisplay {
     font-size: 3rem;
     padding: 3rem;
@@ -153,7 +152,7 @@ body {
     background-color: #ccc;
   }
   
-  .bar {
+.bar {
     height: 100%;
     background-color: #3498db;
     animation: progress 10s linear forwards;
@@ -168,8 +167,7 @@ body {
     }
 }
 
-  
-  input{
+input{
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 0.65rem 0.65rem;
@@ -190,7 +188,6 @@ body {
   margin-top: 4rem;
   margin-left: 8rem;
 }
-
 
 @media (max-width: 1050px) {
   .container {
