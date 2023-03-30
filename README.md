@@ -7,7 +7,7 @@ How it works:
 * If you recall the number correctly, you will advance to the next level (1 digit will be added every time you advance)
 * You will have 10 seconds to remember each number, no matter the length!
 
-Also, enjoy some random facts from lego Steve!
+Also, enjoy some interesting facts from Lego-Steve!
 
 You can try it out at https://btremb.github.io/Memory-Test-Project/
 
