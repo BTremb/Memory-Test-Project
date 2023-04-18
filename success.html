@@ -25,6 +25,13 @@
 
 <script>
 
+document.addEventListener('keydown', function(event) {
+  if (event.code === 'Enter') {
+    document.getElementById('btnNeutral').click();
+  }
+});
+
+
 let images = [
         "images/successSteve1.png",
         "images/successSteve2.png",

@@ -195,4 +195,10 @@ input{
   }
 }
  
-  
+body {
+  /*so players can't highlight and copy numbers*/
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; 
+}

@@ -30,6 +30,13 @@
 
 <script>
 
+document.addEventListener('keydown', function(event) {
+  if (event.code === 'Enter') {
+    document.getElementById('btnStart').click();
+  }
+});
+
+
     const randomNumber = Math.floor(Math.random() * 10);
     const numbers = [randomNumber];
     localStorage.setItem('numbers', JSON.stringify(numbers));
