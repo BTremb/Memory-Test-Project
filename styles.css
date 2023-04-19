@@ -25,6 +25,10 @@ td {
   margin-bottom: 1.5rem;
 }
 
+#saveScoreButton:hover {
+  cursor: pointer;
+}
+
 .containerLeaderboard{
   background-color: #E4E4E1;
   color: #030303; 
@@ -129,6 +133,29 @@ body {
     margin-bottom: 1.5rem;
 }
 
+#btnStart:hover {
+  cursor: pointer;
+}
+
+#btnSkip {
+    font-size: 1.7rem;
+    background-color: #97d454;
+    border-radius: 1rem;
+    margin: auto;
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.7rem #000000;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#btnSkip:hover {
+  cursor: pointer;
+}
+
 #btnNeutral {
   font-size: 1.7rem;
   background-color: #a7a7a7;
@@ -139,6 +166,10 @@ body {
   box-shadow: 0.2rem 0.2rem 0.7rem #000000;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+#btnNeutral:hover {
+  cursor: pointer;
 }
 
 #numDisplay {

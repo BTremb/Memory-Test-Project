@@ -13,6 +13,9 @@
         <div class="container-column1">
             <h1>Remember this number!</h1>
             <div id="numDisplay"></div>
+            <a href="recall.html">
+                <button id="btnSkip">Skip</button>
+            </a>
             <div class="timer">
             <div class="bar"></div></div>
         </div>
@@ -23,6 +26,12 @@
     </div>
 
  <script>
+
+document.addEventListener('keydown', function(event) {
+  if (event.code === 'Enter') {
+    document.getElementById('btnSkip').click();
+  }
+});
 
     let images = [
         "images/splitsSteve.png",
